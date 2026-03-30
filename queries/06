@@ -1,0 +1,4 @@
+Write a query to find percentage contribution of spends by females for each expense type 
+
+select exp_type,sum(amount) as total,1.0*100*sum(case when gender='F' then amount else 0 end)/sum(amount) as Female_contri from credit_card_transactions group by exp_type 
+having sum(case when gender='F' then amount else 0 end)>0 order by Female_contri select *from credit_card_transactions where gender='F'
