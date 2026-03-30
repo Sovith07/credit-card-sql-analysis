@@ -1,0 +1,4 @@
+write a query to print the transaction details(all columns from the table) for each card type when --it reaches a cumulative of 1000000 total spends(We should have 4 rows in the o/p one for each card type) 
+
+with cum_cte as( select *,sum(amount) over(partition by card_type order by transaction_date,transaction_id) as cum_sum from credit_card_transactions),cte_2 as( select * from cum_cte where cum_sum>=1000000),
+cte_3 as( select *,rank() over(partition by card_type order by transaction_date,transaction_id) as rnk from cte_2) select * from cte_3 where rnk=1
