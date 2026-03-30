@@ -1,0 +1,5 @@
+Write a query to print 3 columns: city, highest_expense_type, lowest_expense_type (example format : Delhi , bills, Fuel) 
+
+with cte as( select city,exp_type,sum(amount) as total from credit_card_transactions group by city,exp_type),cte_2 as( select *,rank() over (partition by city order by total) as rnk_1, 
+rank() over (partition by city order by total desc) as rnk_2 from cte) select city,max(case when rnk_1=1 then exp_type else null end) as lowest_expense_type,max(case when rnk_2=1 then exp_type else null end) 
+as highest_expense_type from cte_2 group by city
