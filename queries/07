@@ -1,0 +1,3 @@
+during weekends which city has highest total spend to total no of transactions ratio 
+
+select city,sum(amount)/count(*) as ratio from credit_card_transactions where datepart(weekday,transaction_date) in (1,7) group by city order by ratio desc
