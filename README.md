@@ -1,8 +1,8 @@
-Title:  Credit Card Transaction Analytics using SQL
+#Title:  Credit Card Transaction Analytics using SQL
 
-Description: This project analyzes credit card transaction data to extract business insights such as spending patterns, customer behavior, and city-wise trends using advanced SQL queries.
+##Description: This project analyzes credit card transaction data to extract business insights such as spending patterns, customer behavior, and city-wise trends using advanced SQL queries.
 
-Key Features:
+##Key Features:
 
 Top spending cities & contribution %
 Monthly spend analysis per card type
@@ -11,7 +11,7 @@ Gender-based spending insights
 Expense category analysis
 Weekend behavior analysis
 
-SQL Concepts Used:
+##SQL Concepts Used:
 
 CTEs (Common Table Expressions)
 Window Functions (RANK, ROW_NUMBER, SUM OVER)
@@ -19,7 +19,7 @@ Aggregations
 CASE WHEN logic
 Date functions
 
-Insights:
+##Insights:
 
 Top 5 cities contribute majority of spending
 Female spending is higher in certain categories
